@@ -89,23 +89,23 @@ The next challenge that we had to face was to deal with the categorical data pre
 
 1. __Features that had no influence on the prediction:__ 'amenities' and 'name'\.   
   
-__Our method of dealing with these features:__ We straightway removed these features\.  
+&nbsp;&nbsp; **Our method of dealing with these features:**__ We straightway removed these features\.  
 
 2. __Features that should be of the numerical type but were present in the data as string type, maybe because of he way they were inputted:__ 'price', '$10,000\-$14,999', '$15,000\-$24,999', '$25,000\-$34,999', '$35,000\-$49,999', '$50,000\-$64,999', '$65,000\-$74,999', '$75,000\-$99,999', '$100,000\_or\_more', 'median\_household\_income', 'Mean\_household\_income'\.
 
   
   
-**Our method of dealing with these features:** These were important features and therefore could not be removed\. We converted each of them to numerical form\. Some of the features had some random characters like '-', ':' in them which led to errors while converting to the numeric type\. Therefore, we used  
+&nbsp;&nbsp; **Our method of dealing with these features:** These were important features and therefore could not be removed\. We converted each of them to numerical form\. Some of the features had some random characters like '-', ':' in them which led to errors while converting to the numeric type\. Therefore, we used  
   
-df\[num\_cols\]\.apply\(pd\.to\_numeric, errors='coerce'\)
+&nbsp;&nbsp; df\[num\_cols\]\.apply\(pd\.to\_numeric, errors='coerce'\)
 
-And individually removed the Nan values present returned by the above code\. We had to remove only a few rows in the dataset but the conversion of these features to numeric type added a lot of value to our dataset\. The dataset obtained after converting these variables to numerical type is __ld\_data\_categ\.csv\. We will use this dataset for EDA\.__  
+&nbsp;&nbsp; And individually removed the Nan values present returned by the above code\. We had to remove only a few rows in the dataset but the conversion of these features to numeric type added a lot of value to our dataset\. The dataset obtained after converting these variables to numerical type is __ld\_data\_categ\.csv\. We will use this dataset for EDA\.__  
   
 
 
-1. __Categorical features that had a few categories in them:__ \['bed\_type', 'cancellation\_policy', 'city', 'instant\_bookable', 'metropolitan', 'property\_type', 'room\_type', 'state'\]  
+3. __Categorical features that had a few categories in them:__ \['bed\_type', 'cancellation\_policy', 'city', 'instant\_bookable', 'metropolitan', 'property\_type', 'room\_type', 'state'\]  
   
-__Our method of dealing with these features:__ We first label encoded these features and then one\-hot encoded them\. We chose to do one\-hot encoding because most of these features had more than two categories\. Whenever a feature has more than two categories it is advised that we do one\-hot encoding after label encoding because otherwise some of the categories \(to which a bigger number is assigned while label encoding\) will gain importance over other categories which is undesirable\.  
+&nbsp;&nbsp; **Our method of dealing with these features:** We first label encoded these features and then one\-hot encoded them\. We chose to do one\-hot encoding because most of these features had more than two categories\. Whenever a feature has more than two categories it is advised that we do one\-hot encoding after label encoding because otherwise some of the categories \(to which a bigger number is assigned while label encoding\) will gain importance over other categories which is undesirable\.  
   
 
 
