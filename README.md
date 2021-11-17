@@ -70,11 +70,11 @@ review\_scores\_rating 25\.06  % missing values
 
 review\_scores\_value 25\.3  % missing values
 
-__weekly\_price 77\.01  % missing values  
+**weekly\_price 77\.01  % missing values  **
   
   
   
-__Decisions and analysis after merging the datasets:
+Decisions and analysis after merging the datasets:
 
 - Since has\_availability and weekly\_price are largely null, we remove these columns\.
 - Roughly 25% of review\_scores\_checkin, review\_scores\_cleanliness, review\_scores\_communication, review\_scores\_location, review\_scores\_rating and review\_scores\_value has null values\. Since 25% of the data in these features is null, we had to choose between the two options: \(a\) removing these features \(b\) removing the rows corresponding to which there are null values in these columns\.  
