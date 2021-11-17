@@ -3,7 +3,7 @@ Link to the repo: [https://github\.com/alonb235/CS\-4641\-Project\-14/tree/main]
 
 Team Members: Alfredo Gateno, Alon Baruch, Matthew Grant, Rishit Mohan Ahuja, Shaun Sharma
 
-**Intro/Background:**
+<span style="font-family:Times New Roman; font-size:4em;">Intro/Background:</span>
 
 Airbnb is a service through which property owners can rent out their property to anyone looking to stay there\. Most properties are rented for a short time such as a few nights and property prices are usually charged per night\. Our project will be to build a model which can predict the price per night of an Airbnb listing using different datasets described in Airbnb Data Table Schema\.md
 
