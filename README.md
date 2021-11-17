@@ -89,29 +89,29 @@ The next challenge that we had to face was to deal with the categorical data pre
 
 1. __Features that had no influence on the prediction:__ 'amenities' and 'name'\.   
   
-&nbsp;&nbsp; **Our method of dealing with these features:**__ We straightway removed these features\.  
+**Our method of dealing with these features:**__ We straightway removed these features\.  
 
 2. __Features that should be of the numerical type but were present in the data as string type, maybe because of he way they were inputted:__ 'price', '$10,000\-$14,999', '$15,000\-$24,999', '$25,000\-$34,999', '$35,000\-$49,999', '$50,000\-$64,999', '$65,000\-$74,999', '$75,000\-$99,999', '$100,000\_or\_more', 'median\_household\_income', 'Mean\_household\_income'\.
 
   
   
-&nbsp;&nbsp; **Our method of dealing with these features:** These were important features and therefore could not be removed\. We converted each of them to numerical form\. Some of the features had some random characters like '-', ':' in them which led to errors while converting to the numeric type\. Therefore, we used  
+**Our method of dealing with these features:** These were important features and therefore could not be removed\. We converted each of them to numerical form\. Some of the features had some random characters like '-', ':' in them which led to errors while converting to the numeric type\. Therefore, we used  
   
-&nbsp;&nbsp; df\[num\_cols\]\.apply\(pd\.to\_numeric, errors='coerce'\)
+df\[num\_cols\]\.apply\(pd\.to\_numeric, errors='coerce'\)
 
-&nbsp;&nbsp; And individually removed the Nan values present returned by the above code\. We had to remove only a few rows in the dataset but the conversion of these features to numeric type added a lot of value to our dataset\. The dataset obtained after converting these variables to numerical type is __ld\_data\_categ\.csv\. We will use this dataset for EDA\.__  
+and individually removed the Nan values present returned by the above code\. We had to remove only a few rows in the dataset but the conversion of these features to numeric type added a lot of value to our dataset\. The dataset obtained after converting these variables to numerical type is __ld\_data\_categ\.csv\. We will use this dataset for EDA\.__  
   
 
 
 3. __Categorical features that had a few categories in them:__ \['bed\_type', 'cancellation\_policy', 'city', 'instant\_bookable', 'metropolitan', 'property\_type', 'room\_type', 'state'\]  
   
-&nbsp;&nbsp; **Our method of dealing with these features:** We first label encoded these features and then one\-hot encoded them\. We chose to do one\-hot encoding because most of these features had more than two categories\. Whenever a feature has more than two categories it is advised that we do one\-hot encoding after label encoding because otherwise some of the categories \(to which a bigger number is assigned while label encoding\) will gain importance over other categories which is undesirable\.  
+**Our method of dealing with these features:** We first label encoded these features and then one\-hot encoded them\. We chose to do one\-hot encoding because most of these features had more than two categories\. Whenever a feature has more than two categories it is advised that we do one\-hot encoding after label encoding because otherwise some of the categories \(to which a bigger number is assigned while label encoding\) will gain importance over other categories which is undesirable\.  
   
 
 
 After these three steps, we finally do not have any categorical variables in the data and we can use the data to train our models\.
 
-Exploratory Data Analysis:
+**Exploratory Data Analysis:**
 
 - We performed EDA on ld\_data\_categ\.csv\. We tried to plot the correlation matrix but since we have a lot of features, it did not give us clarity into the dataset\.   
   
@@ -135,7 +135,7 @@ Exploratory Data Analysis:
 
 - Next, we plot the graph to show the trend of the price across cities\. There is a good variation across cities\. \(graph is too big to fit here, please refer to the notebook eda1\.ipynb\)
 
-Models Created:
+**Models Created:**
 
 __Train\-test\-split, dimensionality reduction and model fitting:__
 
@@ -157,11 +157,11 @@ Moving forward, we plan to use bayesian hyperparameter tuning and grid search to
 
 Since our dataset contains airbnb listings from only Asheville, Austin, Nashville, New Orleans, and Los Angeles we built a __Gaussian Mixture Model__ to soft cluster any zip code in the US\. This will be useful for estimating airbnb listings in zipcodes outside of those 5 metropolitan areas\. We used a soft clustering method since we want to be able to weight our estimate based on how close it is to each metro area\. More can be seen in Zip\_code\_GMM
 
-Potential Results/Discussion:
+**Potential Results/Discussion:**
 
 As a result of this project, we will be able to estimate the market price for a given rental listing\. This market price will help both property owners and travellers as owners will be able to get an accurate understanding of how to price their property and travellers will be better able to spot good deals for rental properties\. We will also be able to understand which features of a rental property are most correlated with price, business, or reviews
 
-Plan for the Final:  
+**Plan for the Final:**
   
 1\. We can use more complex models \(ensemble learning models and neural networks\) for making predictions\. Moreover, we will use Bayesian hyperparameter tuning and grid search for hyperparameter tuning\.
 
@@ -169,13 +169,13 @@ Plan for the Final:
 
 3\. We plan to verify if our dataset meets the fulfils the assumptions made in the models that we are using\. By this, I mean that if we are using Linear Regression then we must check if the data points have a linear relationship, homoscedasticity, etc\. This will give us a better insight into the data and will help make more accurate predictions\.
 
-References:
+**References:**
 
 - [https://arxiv\.org/pdf/1907\.12665\.pdf](https://arxiv.org/pdf/1907.12665.pdf) \- AirBnB prediction using Machine Learning and Sentiment Analysis\. \(K\-Means clustering and Linear Regression\)
 - [http://cs229\.stanford\.edu/proj2016/report/WuYu\_HousingPrice\_report\.pdf](http://cs229.stanford.edu/proj2016/report/WuYu_HousingPrice_report.pdf) \- Real Estate Price Precition with Regression and Classification
 - [http://rl\.cs\.mcgill\.ca/comp598/fall2014/comp598\_submission\_99\.pdf](http://rl.cs.mcgill.ca/comp598/fall2014/comp598_submission_99.pdf) \- Prediction of real estate property prices in Montreal
 
-Timeline:
+**Timeline:**
 
 - \(10/4/21\) \- Proposal Writeup: Into, Problem, Methods, Results/references
 - \(10/6/21\) \- Video Proposal:
