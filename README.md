@@ -28,7 +28,7 @@ Our pipeline:
 
 6\. __Evaluation__: MSE should work but we might find some other more relevant evaluation metrics also\.
 
-Datasets:
+*Datasets*:
 
 We obtained the data from CitadelΓÇÖs Datathon Summer 2020\. We planned to use three datasets: listings\.csv, demographics\.csv and real\_estate\.csv for predicting the price\. Please look at the ΓÇÿAirbnb Data Table Schema\.mdΓÇÖ to know all these datasetsΓÇÖ features\. Listings\.csv has 50321 rows and 29 columns, demographics\.csv has 33120 rows and 27 columns and real\_estate\.csv has 29111 rows and 262 columns\.
 
