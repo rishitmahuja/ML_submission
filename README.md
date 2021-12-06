@@ -172,7 +172,8 @@ To improve the performance of our models, we used bagging and boosting models an
 
 For cross-validation, we divided the training dataset into 80% psedo-training and 20% pseudo-testing. For finding the optimal value of the hyper-parameter, we used grid search.
 
-## Random Forest: it is a bagging technique that tries to significantly reduce the variance while slightly increasing the bias in prediction.
+## Random Forest
+it is a bagging technique that tries to significantly reduce the variance while slightly increasing the bias in prediction.
 
 ### Important hyperparameters:
 
