@@ -163,6 +163,7 @@ RMSE does not give a good estimate of how well the model predicted. If we are wo
 This is the most simple model that we used and we will use it as the baseline to check the efficacy of other models.
 
 **Results:**
+
 normalized_RMSE = 0.12
 
 R-squared value: 0.47
@@ -175,24 +176,26 @@ For cross-validation, we divided the training dataset into 80% psedo-training an
 
 ### Important hyperparameters:
 
-### max_depth: it is the maximum depth of the decision trees that we will be using. Chosen Value: 15
-### max_features: it is the maximum number of features that will be used while making a split in any of the decision trees used in building the random forest. Chosen Value: 5
-### Bootstrap (with/without replacement)*: this hyperparameter decides whether we want to make a replacement while we are picking data points from our initial (whole) dataset. Chosen value: True
-### n_estimators: number of trees used in making the forest. Chosen Value: 73
+*max_depth*: it is the maximum depth of the decision trees that we will be using. Chosen Value: 15
+*max_features*: it is the maximum number of features that will be used while making a split in any of the decision trees used in building the random forest. Chosen Value: 5
+*Bootstrap (with/without replacement)*: this hyperparameter decides whether we want to make a replacement while we are picking data points from our initial (whole) dataset. Chosen value: True
+*n_estimators*: number of trees used in making the forest. Chosen Value: 73
 
 
 **Results:**
+
 normalized_RMSE = 0.023
 
 R-squared value: 0.76
 
 
-## XGBoost: it is a boosting technique that tries to significantly decrease the bias while slightly increasing the variance in prediction.
+## XGBoost: 
+It is a boosting technique that tries to significantly decrease the bias while slightly increasing the variance in prediction.
 
 ### Important hyperparameters:
-### max_depth: it is the maximum depth of the decision trees that we will be using. **Chosen value: 23**
-### learning_rate: this hyperparameter decides how much weight should be given to the new decision tree whose prediction we are going to use. Unlike random forest, we manually assign a value to the learning rate for XGBoost. Chosen Value:**0.22**
-### minimum_child_weight: minimum sum of weights of all observations required in a child. **Chosen Value: 0.7**
+*max_depth:* it is the maximum depth of the decision trees that we will be using. **Chosen value: 23**
+*learning_rate:* this hyperparameter decides how much weight should be given to the new decision tree whose prediction we are going to use. Unlike random forest, we manually assign a value to the learning rate for XGBoost. Chosen Value:**0.22**
+*minimum_child_weight:* minimum sum of weights of all observations required in a child. **Chosen Value: 0.7**
 
 ### Final Results From Our Best Model (XGBoost):
 
