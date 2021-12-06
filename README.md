@@ -1,6 +1,4 @@
 # Midterm Report
-Link to the repo: [https://github\.com/alonb235/CS\-4641\-Project\-14/tree/main](https://github.com/alonb235/CS-4641-Project-14/tree/main) 
-
 Team Members: Alfredo Gateno, Alon Baruch, Matthew Grant, Rishit Mohan Ahuja, Shaun Sharma
 
 # Intro/Background:
@@ -152,6 +150,54 @@ normalizedRMSE is better than RMSE because it captures the maximum and minimum v
 To improve the performance of our model, we used __XGBoost for regression__\. Using XGBoost, our normalizedRMSE was about 0\.02 which is much better than Linear Regression\.
 
 Moving forward, we plan to use bayesian hyperparameter tuning and grid search to tune the models better\. We can also make use of the clustering algorithm to make more generalized predictions\.
+
+---
+For the purpose of evaluation, we made our own evaluation matrix called normalized_RMSE that is basically $RMSE/y_mean$ (we were motivated by one of the homework problems to implement this idea). 
+
+Why we chose the normalized_RMSE matrix?
+
+RMSE does not give a good estimate of how well the model predicted. If we are working on a dataset that has very small values for all the features then the RMSE will also be very small even if the model made inaccurate predictions. Therefore, to take into account the nature of the dataset, we divide RMSE by the mean of the y-values.
+
+Linear Regression:
+This is the most simple model that we used and we will use it as the baseline to check the efficacy of other models.
+
+Results:
+normalized_RMSE = 0.12
+R-squared value: 0.47
+
+To improve the performance of our models, we used bagging and boosting models and performed cross-validation to tune the hyperparameters. We focused more the hyperparameters that are usually considered to be more useful.
+
+For cross-validation, we divided the training dataset into 80% psedo-training and 20% pseudo-testing. For finding the optimal value of the hyper-parameter, we used grid search.
+
+Random Forest: it is a bagging technique that tries to significantly reduce the variance while slightly increasing the bias in prediction.
+
+Important hyperparameters:
+
+max_depth: it is the maximum depth of the decision trees that we will be using. Chosen Value: 15
+max_features: it is the maximum number of features that will be used while making a split in any of the decision trees used in building the random forest. Chosen Value: 5
+Bootstrap (with/without replacement): this hyperparameter decides whether we want to make a replacement while we are picking data points from our initial (whole) dataset. Chosen value: True
+n_estimators: number of trees used in making the forest. Chosen Value: 73
+
+
+Results:
+normalized_RMSE = 0.023
+R-squared value: 0.76
+
+
+XGBoost: it is a boosting technique that tries to significantly decrease the bias while slightly increasing the variance in prediction.
+
+Important hyperparameters:
+max_depth: it is the maximum depth of the decision trees that we will be using. Chosen value: 23
+learning_rate: this hyperparameter decides how much weight should be given to the new decision tree whose prediction we are going to use. Unlike random forest, we manually assign a value to the learning rate for XGBoost. Chosen Value: 0.22
+minimum_child_weight: minimum sum of weights of all observations required in a child. Chosen Value: 0.7
+
+Results:
+normalized_RMSE = 0.017
+R-squared value: 0.79
+
+XGBoost performed better than Random Forest based on both the objectives: normalized_RMSE and R-squared.
+
+
 
 ## Zip Code clustering:
 
